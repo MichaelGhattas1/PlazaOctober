@@ -11,8 +11,8 @@ import { PublicCompanyService } from './public-company.service';
 @Component({
   selector: 'app-pre-footer',
   template: `
-    <section id="contact" class="hover-fluid scroll-mt-28 bg-navy-900 py-24 text-sand">
-      <div class="grid items-start gap-x-16 gap-y-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+    <section id="contact" class="scroll-mt-28 bg-navy-900 py-24 text-sand">
+      <div class="mx-auto grid max-w-7xl items-start gap-x-16 gap-y-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
         <div class="lg:col-span-7">
           <p class="kicker">{{ brand() }}</p>
           <h2 class="mt-3 font-serif text-4xl font-bold text-white sm:text-5xl">{{ copy().contactUs }}</h2>

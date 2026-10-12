@@ -74,18 +74,6 @@
     background-clip: text;
     color: transparent;
   }
-
-  .hover-fluid {
-    width: 100%;
-    max-width: 80rem;
-    margin-inline: auto;
-    transition: max-width 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  .hover-fluid:hover,
-  .hover-fluid:focus-within {
-    max-width: 100%;
-  }
 }
 
 body {

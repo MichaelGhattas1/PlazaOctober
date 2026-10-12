@@ -16,8 +16,8 @@ import { TripCard } from './trip-card.component';
   selector: 'app-home',
   imports: [HotelCard, TripCard, RouterLink, PreFooter],
   template: `
-    <section class="hover-fluid bg-navy-900">
-    <div class="grid items-stretch gap-4 px-4 py-8 sm:px-6 lg:grid-cols-12 lg:px-8">
+    <section class="bg-navy-900">
+    <div class="mx-auto grid max-w-7xl items-stretch gap-4 px-4 py-8 sm:px-6 lg:grid-cols-12 lg:px-8">
       <div
         class="relative flex min-h-[32rem] flex-col justify-end overflow-hidden rounded-xl border border-gold-500/30 bg-navy-900 p-8 text-white shadow-2xl md:p-12 lg:min-h-[36rem]"
         [class.lg:col-span-8]="hasFilm()"
@@ -80,8 +80,8 @@ import { TripCard } from './trip-card.component';
     </section>
 
     @if (hasStory()) {
-      <section class="hover-fluid relative overflow-hidden bg-navy-950 py-24">
-        <div class="grid items-center gap-16 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+      <section class="relative overflow-hidden bg-navy-950 py-24">
+        <div class="mx-auto grid max-w-7xl items-center gap-16 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <div class="mb-3 inline-flex items-center gap-2 text-xs font-semibold tracking-widest text-gold-400 uppercase">
               <span class="h-px w-8 bg-gold-400"></span>
@@ -121,8 +121,8 @@ import { TripCard } from './trip-card.component';
       </section>
     }
 
-    <section class="hover-fluid bg-navy-900 py-24 [&_a.group]:bg-navy-950">
-      <div class="px-4 sm:px-6 lg:px-8">
+    <section class="bg-navy-900 py-24 [&_a.group]:bg-navy-950">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mx-auto mb-16 max-w-3xl text-center">
           <span class="text-xs font-semibold tracking-widest text-gold-400 uppercase">{{ brand() }}</span>
           <h2 class="mt-3 mb-4 font-serif text-4xl font-bold text-white sm:text-5xl">{{ copy().hotels }}</h2>
@@ -143,8 +143,8 @@ import { TripCard } from './trip-card.component';
       </div>
     </section>
 
-    <section id="events" class="hover-fluid scroll-mt-28 bg-navy-950 py-24">
-      <div class="px-4 sm:px-6 lg:px-8">
+    <section id="events" class="scroll-mt-28 bg-navy-950 py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mx-auto mb-16 max-w-3xl text-center">
           <span class="text-xs font-semibold tracking-widest text-gold-400 uppercase">{{ brand() }}</span>
           <h2 class="mt-3 font-serif text-4xl font-bold text-white sm:text-5xl">{{ copy().events }}</h2>
@@ -185,8 +185,8 @@ import { TripCard } from './trip-card.component';
     </section>
 
     @if (trips().data?.length) {
-      <section class="hover-fluid bg-navy-900 py-24 [&_a.group]:bg-navy-950">
-        <div class="px-4 sm:px-6 lg:px-8">
+      <section class="bg-navy-900 py-24 [&_a.group]:bg-navy-950">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="mx-auto mb-16 max-w-3xl text-center">
             <span class="text-xs font-semibold tracking-widest text-gold-400 uppercase">{{ brand() }}</span>
             <h2 class="mt-3 font-serif text-4xl font-bold text-white sm:text-5xl">{{ copy().journeys }}</h2>
@@ -204,8 +204,8 @@ import { TripCard } from './trip-card.component';
     }
 
     @if (venues().data?.length) {
-      <section class="hover-fluid bg-navy-950 py-24">
-        <div class="px-4 sm:px-6 lg:px-8">
+      <section class="bg-navy-950 py-24">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="mx-auto mb-16 max-w-3xl text-center">
             <span class="text-xs font-semibold tracking-widest text-gold-400 uppercase">{{ brand() }}</span>
             <h2 class="mt-3 mb-4 font-serif text-4xl font-bold text-white sm:text-5xl">{{ copy().venues }}</h2>
@@ -237,8 +237,8 @@ import { TripCard } from './trip-card.component';
     <app-pre-footer />
 
     @if (sponsors().data?.length) {
-      <section class="hover-fluid bg-navy-900 py-16">
-        <div class="px-4 sm:px-6 lg:px-8">
+      <section class="bg-navy-900 py-16">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p class="text-center text-xs font-semibold tracking-widest text-gold-400 uppercase">{{ copy().sponsors }}</p>
           <ul class="mt-8 flex flex-wrap items-center justify-center gap-4">
             @for (sponsor of sponsors().data; track sponsor.id) {
@@ -264,7 +264,7 @@ import { TripCard } from './trip-card.component';
 
 
 
-    <section class="hover-fluid bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 py-16 text-navy-950">
+    <section class="bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 py-16 text-navy-950">
       <div class="mx-auto max-w-3xl px-4 text-center sm:px-6">
         <h2 class="font-serif text-3xl font-bold sm:text-4xl">{{ brand() }}</h2>
         @if (company().data?.mission) {
