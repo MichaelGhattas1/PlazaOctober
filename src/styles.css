@@ -1,3 +1,155 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --color-ink: #1b1714;
+  --color-cream: #faf7f2;
+  --color-sand: #efebe4;
+  --color-gold: #c5a059;
+  --color-gold-300: #f3e5ab;
+  --color-gold-400: #e5c158;
+  --color-gold-500: #c5a059;
+  --color-gold-600: #a37f37;
+  --color-gold-700: #826227;
+  --color-navy-800: #0f172a;
+  --color-navy-900: #0b1120;
+  --color-navy-950: #050811;
+  --color-pine: #1d3832;
+  --color-bark: #5e534a;
+  --color-paper: #fffdf8;
+}
+
+@layer components {
+  .btn-ink {
+    @apply inline-flex items-center justify-center rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-cream transition hover:bg-pine disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-line {
+    @apply inline-flex items-center justify-center rounded-full border border-sand bg-transparent px-5 py-2.5 text-sm font-medium text-ink transition hover:border-ink disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center rounded bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 px-5 py-2.5 text-xs font-bold tracking-widest text-navy-950 uppercase shadow-md transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-gold-500/25;
+  }
+
+  .btn-gold-line {
+    @apply inline-flex items-center justify-center rounded border border-gold-500 px-5 py-2.5 text-xs font-bold tracking-widest text-gold-400 uppercase transition hover:bg-gold-500 hover:text-navy-950;
+  }
+
+  .btn-quiet {
+    @apply text-sm text-bark underline-offset-4 hover:text-ink hover:underline;
+  }
+
+  .btn-danger {
+    @apply text-sm text-red-800 underline-offset-4 hover:underline;
+  }
+
+  .field {
+    @apply grid gap-1.5 text-sm text-bark;
+  }
+
+  .field input,
+  .field textarea,
+  .field select {
+    @apply w-full rounded-2xl border border-sand bg-paper px-3 py-2.5 text-base text-ink outline-none transition focus:border-gold;
+  }
+
+  .panel {
+    @apply rounded-[1.75rem] bg-paper p-6 shadow-[0_24px_60px_-36px_rgba(27,23,20,0.55)];
+  }
+
+  .kicker {
+    @apply text-xs font-semibold tracking-[0.28em] text-gold-400 uppercase;
+  }
+
+  .glass-nav {
+    background: rgb(11 17 32 / 0.85);
+    backdrop-filter: blur(12px);
+  }
+
+  .gold-gradient-text {
+    background: linear-gradient(135deg, #f3e5ab 0%, #c5a059 50%, #826227 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .hover-fluid {
+    width: 100%;
+    max-width: 80rem;
+    margin-inline: auto;
+    transition: max-width 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .hover-fluid:hover,
+  .hover-fluid:focus-within {
+    max-width: 100%;
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--color-navy-950);
+  color: var(--color-sand);
+  font-family: var(--font-sans);
+  font-weight: 300;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+input[type="checkbox"] {
+  accent-color: var(--color-gold);
+  width: 1rem;
+  height: 1rem;
+}
+
+::selection {
+  background: #c5a059;
+  color: #050811;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b1120;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c5a059;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e5c158;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}

@@ -1,0 +1,455 @@
+import { LanguageCode, VenueType } from '../core/api/api.models';
+
+export interface UiCopy {
+  hotels: string;
+  journeys: string;
+  events: string;
+  eventsSoon: string;
+  house: string;
+  admin: string;
+  menu: string;
+  close: string;
+  home: string;
+  about: string;
+  vision: string;
+  mission: string;
+  sponsors: string;
+  venues: string;
+  loading: string;
+  unavailable: string;
+  publishedSoon: string;
+  collectionSoon: string;
+  noHotels: string;
+  noTrips: string;
+  noVenues: string;
+  noOwners: string;
+  viewHotel: string;
+  viewAll: string;
+  backToHotels: string;
+  backToJourneys: string;
+  backToEvents: string;
+  backToHotel: string;
+  hours: string;
+  meetingPoint: string;
+  openMenu: string;
+  openMap: string;
+  contact: string;
+  contactUs: string;
+  phone: string;
+  email: string;
+  address: string;
+  call: string;
+  social: string;
+  firstName: string;
+  lastName: string;
+  emailAddress: string;
+  phoneNumber: string;
+  yourMessage: string;
+  firstNameHint: string;
+  lastNameHint: string;
+  emailHint: string;
+  phoneHint: string;
+  messageHint: string;
+  submitEnquiry: string;
+  enquirySending: string;
+  enquirySent: string;
+  enquiryFailed: string;
+  enquiryConfirm: string;
+  contactIntro: string;
+  gallery: string;
+  documents: string;
+  watchFilm: string;
+  explore: string;
+  footerNote: string;
+  untitled: string;
+  notFound: string;
+}
+
+const copy: Record<LanguageCode, UiCopy> = {
+  en: {
+    hotels: 'Hotels',
+    journeys: 'Journeys',
+    events: 'Events',
+    eventsSoon: 'The events programme is being prepared.',
+    house: 'The House',
+    admin: 'Admin',
+    menu: 'Menu',
+    close: 'Close',
+    home: 'Home',
+    about: 'About',
+    vision: 'Vision',
+    mission: 'Mission',
+    sponsors: 'Partners',
+    venues: 'Places',
+    loading: 'Loading',
+    unavailable: 'The house could not be reached just now.',
+    publishedSoon: 'The house profile will be published here.',
+    collectionSoon: 'The hotel collection will be announced here.',
+    noHotels: 'No hotels yet.',
+    noTrips: 'No journeys yet.',
+    noVenues: 'No places are listed for this hotel.',
+    noOwners: 'The house has not introduced its owners yet.',
+    viewHotel: 'View hotel',
+    viewAll: 'View all',
+    backToHotels: 'All hotels',
+    backToJourneys: 'All journeys',
+    backToEvents: 'All events',
+    backToHotel: 'Back to hotel',
+    hours: 'hours',
+    meetingPoint: 'Meeting point',
+    openMenu: 'View the menu',
+    openMap: 'Open the map',
+    contact: 'Contact',
+    contactUs: 'Contact us',
+    phone: 'Phone',
+    email: 'Email',
+    address: 'Address',
+    call: 'Call',
+    social: 'Social',
+    firstName: 'First name',
+    lastName: 'Last name',
+    emailAddress: 'Email address',
+    phoneNumber: 'Phone number',
+    yourMessage: 'Your message',
+    firstNameHint: 'Please enter your first name...',
+    lastNameHint: 'Please enter your last name...',
+    emailHint: 'Please enter your email address...',
+    phoneHint: 'Please enter your phone number...',
+    messageHint: 'Please let us know what you are looking for...',
+    submitEnquiry: 'Submit enquiry',
+    enquirySending: 'Sending',
+    enquirySent: 'Your enquiry has been sent.',
+    enquiryFailed: 'The enquiry could not be sent. Please try again.',
+    enquiryConfirm: 'Confirm the inbox from the email just sent, then submit the enquiry again.',
+    contactIntro: 'Contact the house and we will help you plan the stay.',
+    gallery: 'Gallery',
+    documents: 'Documents',
+    watchFilm: 'Watch the film',
+    explore: 'Explore',
+    footerNote: 'Plaza Inn hospitality.',
+    untitled: 'Untitled',
+    notFound: 'This page is not in the collection.',
+  },
+  ar: {
+    hotels: 'الفنادق',
+    journeys: 'الرحلات',
+    events: 'الفعاليات',
+    eventsSoon: 'قسم الفعاليات قيد الإعداد.',
+    house: 'البيت',
+    admin: 'الإدارة',
+    menu: 'القائمة',
+    close: 'إغلاق',
+    home: 'الرئيسية',
+    about: 'من نحن',
+    vision: 'الرؤية',
+    mission: 'الرسالة',
+    sponsors: 'الشركاء',
+    venues: 'الأماكن',
+    loading: 'جار التحميل',
+    unavailable: 'تعذر الوصول إلى البيت الآن.',
+    publishedSoon: 'سيُنشر ملف البيت هنا.',
+    collectionSoon: 'ستُعلن مجموعة الفنادق هنا.',
+    noHotels: 'لا توجد فنادق بعد.',
+    noTrips: 'لا توجد رحلات بعد.',
+    noVenues: 'لا توجد أماكن لهذا الفندق.',
+    noOwners: 'لم يقدّم البيت مالكيه بعد.',
+    viewHotel: 'عرض الفندق',
+    viewAll: 'عرض الكل',
+    backToHotels: 'كل الفنادق',
+    backToJourneys: 'كل الرحلات',
+    backToEvents: 'كل الفعاليات',
+    backToHotel: 'العودة إلى الفندق',
+    hours: 'ساعات',
+    meetingPoint: 'نقطة اللقاء',
+    openMenu: 'عرض القائمة',
+    openMap: 'فتح الخريطة',
+    contact: 'التواصل',
+    contactUs: 'تواصل معنا',
+    phone: 'الهاتف',
+    email: 'البريد',
+    address: 'العنوان',
+    call: 'اتصال',
+    social: 'وسائل التواصل',
+    firstName: 'الاسم الأول',
+    lastName: 'اسم العائلة',
+    emailAddress: 'البريد الإلكتروني',
+    phoneNumber: 'رقم الهاتف',
+    yourMessage: 'رسالتك',
+    firstNameHint: 'أدخل اسمك الأول...',
+    lastNameHint: 'أدخل اسم العائلة...',
+    emailHint: 'أدخل بريدك الإلكتروني...',
+    phoneHint: 'أدخل رقم هاتفك...',
+    messageHint: 'أخبرنا بما تبحث عنه...',
+    submitEnquiry: 'إرسال الاستفسار',
+    enquirySending: 'جارٍ الإرسال',
+    enquirySent: 'تم إرسال طلبك.',
+    enquiryFailed: 'تعذر إرسال الطلب. حاول مرة أخرى.',
+    enquiryConfirm: 'أكّد صندوق البريد من الرسالة التي أُرسلت للتو، ثم أعد إرسال الطلب.',
+    contactIntro: 'تواصل مع البيت وسنساعدك في ترتيب الإقامة.',
+    gallery: 'المعرض',
+    documents: 'المستندات',
+    watchFilm: 'مشاهدة الفيلم',
+    explore: 'استكشف',
+    footerNote: 'ضيافة بلازا إن.',
+    untitled: 'بدون عنوان',
+    notFound: 'هذه الصفحة ليست ضمن المجموعة.',
+  },
+  fr: {
+    hotels: 'Hôtels',
+    journeys: 'Voyages',
+    events: 'Événements',
+    eventsSoon: 'Le programme des événements est en préparation.',
+    house: 'La maison',
+    admin: 'Admin',
+    menu: 'Menu',
+    close: 'Fermer',
+    home: 'Accueil',
+    about: 'À propos',
+    vision: 'Vision',
+    mission: 'Mission',
+    sponsors: 'Partenaires',
+    venues: 'Lieux',
+    loading: 'Chargement',
+    unavailable: 'La maison est inaccessible pour le moment.',
+    publishedSoon: 'Le profil de la maison sera publié ici.',
+    collectionSoon: 'La collection d’hôtels sera annoncée ici.',
+    noHotels: 'Aucun hôtel pour le moment.',
+    noTrips: 'Aucun voyage pour le moment.',
+    noVenues: 'Aucun lieu n’est indiqué pour cet hôtel.',
+    noOwners: 'La maison n’a pas encore présenté ses propriétaires.',
+    viewHotel: 'Voir l’hôtel',
+    viewAll: 'Tout voir',
+    backToHotels: 'Tous les hôtels',
+    backToJourneys: 'Tous les voyages',
+    backToEvents: 'Tous les événements',
+    backToHotel: 'Retour à l’hôtel',
+    hours: 'heures',
+    meetingPoint: 'Point de rendez-vous',
+    openMenu: 'Voir la carte',
+    openMap: 'Ouvrir la carte',
+    contact: 'Contact',
+    contactUs: 'Nous contacter',
+    phone: 'Téléphone',
+    email: 'E-mail',
+    address: 'Adresse',
+    call: 'Appeler',
+    social: 'Réseaux',
+    firstName: 'Prénom',
+    lastName: 'Nom',
+    emailAddress: 'Adresse e-mail',
+    phoneNumber: 'Téléphone',
+    yourMessage: 'Votre message',
+    firstNameHint: 'Veuillez entrer votre prénom...',
+    lastNameHint: 'Veuillez entrer votre nom...',
+    emailHint: 'Veuillez entrer votre adresse e-mail...',
+    phoneHint: 'Veuillez entrer votre numéro de téléphone...',
+    messageHint: 'Dites-nous ce que vous recherchez...',
+    submitEnquiry: 'Envoyer la demande',
+    enquirySending: 'Envoi',
+    enquirySent: 'Votre demande a été envoyée.',
+    enquiryFailed: 'La demande n’a pas pu être envoyée. Veuillez réessayer.',
+    enquiryConfirm: 'Confirmez la boîte mail depuis le message qui vient d’être envoyé, puis renvoyez la demande.',
+    contactIntro: 'Contactez la maison, nous vous aiderons à préparer le séjour.',
+    gallery: 'Galerie',
+    documents: 'Documents',
+    watchFilm: 'Voir le film',
+    explore: 'Explorer',
+    footerNote: 'Hospitalité Plaza Inn.',
+    untitled: 'Sans titre',
+    notFound: 'Cette page ne fait pas partie de la collection.',
+  },
+  zh: {
+    hotels: '酒店',
+    journeys: '旅程',
+    events: '活动',
+    eventsSoon: '活动栏目正在筹备中。',
+    house: '品牌之家',
+    admin: '管理',
+    menu: '菜单',
+    close: '关闭',
+    home: '首页',
+    about: '关于我们',
+    vision: '愿景',
+    mission: '使命',
+    sponsors: '合作伙伴',
+    venues: '场所',
+    loading: '正在加载',
+    unavailable: '暂时无法连接品牌内容。',
+    publishedSoon: '品牌简介将发布在这里。',
+    collectionSoon: '酒店系列将在这里公布。',
+    noHotels: '暂无酒店。',
+    noTrips: '暂无旅程。',
+    noVenues: '这家酒店还没有列出场所。',
+    noOwners: '品牌尚未介绍所有者。',
+    viewHotel: '查看酒店',
+    viewAll: '查看全部',
+    backToHotels: '全部酒店',
+    backToJourneys: '全部旅程',
+    backToEvents: '全部活动',
+    backToHotel: '返回酒店',
+    hours: '小时',
+    meetingPoint: '集合地点',
+    openMenu: '查看菜单',
+    openMap: '打开地图',
+    contact: '联系',
+    contactUs: '联系我们',
+    phone: '电话',
+    email: '邮箱',
+    address: '地址',
+    call: '致电',
+    social: '社交',
+    firstName: '名',
+    lastName: '姓',
+    emailAddress: '电子邮箱',
+    phoneNumber: '电话号码',
+    yourMessage: '您的留言',
+    firstNameHint: '请输入您的名...',
+    lastNameHint: '请输入您的姓...',
+    emailHint: '请输入您的电子邮箱...',
+    phoneHint: '请输入您的电话号码...',
+    messageHint: '请告诉我们您的需求...',
+    submitEnquiry: '提交咨询',
+    enquirySending: '正在发送',
+    enquirySent: '您的咨询已发送。',
+    enquiryFailed: '咨询未能发送，请重试。',
+    enquiryConfirm: '请先打开刚才收到的邮件确认收件箱，然后再次提交。',
+    contactIntro: '联系品牌之家，我们将协助您安排入住。',
+    gallery: '图库',
+    documents: '文件',
+    watchFilm: '观看影片',
+    explore: '探索',
+    footerNote: 'Plaza Inn 款待。',
+    untitled: '未命名',
+    notFound: '此页面不在系列之中。',
+  },
+  es: {
+    hotels: 'Hoteles',
+    journeys: 'Viajes',
+    events: 'Eventos',
+    eventsSoon: 'El programa de eventos está en preparación.',
+    house: 'La casa',
+    admin: 'Admin',
+    menu: 'Menú',
+    close: 'Cerrar',
+    home: 'Inicio',
+    about: 'Nosotros',
+    vision: 'Visión',
+    mission: 'Misión',
+    sponsors: 'Aliados',
+    venues: 'Lugares',
+    loading: 'Cargando',
+    unavailable: 'La casa no se pudo alcanzar ahora.',
+    publishedSoon: 'El perfil de la casa se publicará aquí.',
+    collectionSoon: 'La colección de hoteles se anunciará aquí.',
+    noHotels: 'Todavía no hay hoteles.',
+    noTrips: 'Todavía no hay viajes.',
+    noVenues: 'Este hotel no tiene lugares publicados.',
+    noOwners: 'La casa aún no ha presentado a sus propietarios.',
+    viewHotel: 'Ver hotel',
+    viewAll: 'Ver todo',
+    backToHotels: 'Todos los hoteles',
+    backToJourneys: 'Todos los viajes',
+    backToEvents: 'Todos los eventos',
+    backToHotel: 'Volver al hotel',
+    hours: 'horas',
+    meetingPoint: 'Punto de encuentro',
+    openMenu: 'Ver el menú',
+    openMap: 'Abrir el mapa',
+    contact: 'Contacto',
+    contactUs: 'Contáctenos',
+    phone: 'Teléfono',
+    email: 'Correo',
+    address: 'Dirección',
+    call: 'Llamar',
+    social: 'Redes',
+    firstName: 'Nombre',
+    lastName: 'Apellido',
+    emailAddress: 'Correo electrónico',
+    phoneNumber: 'Teléfono',
+    yourMessage: 'Su mensaje',
+    firstNameHint: 'Escriba su nombre...',
+    lastNameHint: 'Escriba su apellido...',
+    emailHint: 'Escriba su correo electrónico...',
+    phoneHint: 'Escriba su número de teléfono...',
+    messageHint: 'Cuéntenos qué está buscando...',
+    submitEnquiry: 'Enviar consulta',
+    enquirySending: 'Enviando',
+    enquirySent: 'Su consulta ha sido enviada.',
+    enquiryFailed: 'No se pudo enviar la consulta. Inténtelo de nuevo.',
+    enquiryConfirm: 'Confirme el buzón desde el correo que acaba de llegar y vuelva a enviar la consulta.',
+    contactIntro: 'Contacte a la casa y le ayudaremos a preparar la estancia.',
+    gallery: 'Galería',
+    documents: 'Documentos',
+    watchFilm: 'Ver la película',
+    explore: 'Explorar',
+    footerNote: 'Hospitalidad Plaza Inn.',
+    untitled: 'Sin título',
+    notFound: 'Esta página no está en la colección.',
+  },
+};
+
+const venueNames: Record<LanguageCode, Record<VenueType, string>> = {
+  en: {
+    Restaurant: 'Restaurant',
+    Lounge: 'Lounge',
+    Spa: 'Spa',
+    Bar: 'Bar',
+    Cafe: 'Cafe',
+    Pool: 'Pool',
+    Gym: 'Gym',
+    Ballroom: 'Ballroom',
+    Other: 'Other',
+  },
+  ar: {
+    Restaurant: 'مطعم',
+    Lounge: 'صالة',
+    Spa: 'سبا',
+    Bar: 'بار',
+    Cafe: 'مقهى',
+    Pool: 'مسبح',
+    Gym: 'نادي رياضي',
+    Ballroom: 'قاعة',
+    Other: 'أخرى',
+  },
+  fr: {
+    Restaurant: 'Restaurant',
+    Lounge: 'Salon',
+    Spa: 'Spa',
+    Bar: 'Bar',
+    Cafe: 'Café',
+    Pool: 'Piscine',
+    Gym: 'Salle de sport',
+    Ballroom: 'Salle de bal',
+    Other: 'Autre',
+  },
+  zh: {
+    Restaurant: '餐厅',
+    Lounge: '酒廊',
+    Spa: '水疗',
+    Bar: '酒吧',
+    Cafe: '咖啡厅',
+    Pool: '泳池',
+    Gym: '健身房',
+    Ballroom: '宴会厅',
+    Other: '其他',
+  },
+  es: {
+    Restaurant: 'Restaurante',
+    Lounge: 'Salón',
+    Spa: 'Spa',
+    Bar: 'Bar',
+    Cafe: 'Café',
+    Pool: 'Piscina',
+    Gym: 'Gimnasio',
+    Ballroom: 'Salón de baile',
+    Other: 'Otro',
+  },
+};
+
+export function uiCopy(code: LanguageCode): UiCopy {
+  return copy[code];
+}
+
+export function venueTypeName(code: LanguageCode, type: VenueType): string {
+  return venueNames[code][type];
+}
