@@ -54,13 +54,13 @@ import { PublicCompanyService } from './public-company.service';
         <div class="lg:col-span-5 lg:col-start-8 lg:row-start-2">
           <div class="border border-gold-500/50 p-3">
             <div class="relative h-72 overflow-hidden sm:h-80">
-              <iframe
+              <!-- <iframe
                 class="absolute inset-0 h-full w-full"
                 [src]="mapUrl"
                 [title]="copy().address"
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
+              ></iframe> -->
             </div>
           </div>
           <ul class="mt-6 space-y-4">
