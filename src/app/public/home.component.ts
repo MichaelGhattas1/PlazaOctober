@@ -67,12 +67,12 @@ import { TripCard } from './trip-card.component';
               (loadeddata)="startFilm($event)"
             ></video>
           } @else if (embedUrl(); as src) {
-            <!-- <iframe
+            <iframe
               class="pointer-events-none absolute top-1/2 left-1/2 h-full min-h-full w-[180%] min-w-full -translate-x-1/2 -translate-y-1/2"
               [src]="src"
               [title]="copy().watchFilm"
               allow="autoplay; fullscreen; picture-in-picture"
-            ></iframe> -->
+            ></iframe>
           }
         </div>
       }

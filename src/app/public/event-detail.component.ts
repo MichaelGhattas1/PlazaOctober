@@ -48,13 +48,13 @@ interface FilmView {
             [src]="src"
           ></video>
         } @else if (heroEmbed(); as src) {
-          <!-- <iframe
+          <iframe
             class="mt-8 aspect-video w-full rounded-xl border border-gold-500/30"
             [src]="src"
             [title]="page().data?.event?.title || copy().watchFilm"
             allow="autoplay; fullscreen; picture-in-picture"
             allowfullscreen
-          ></iframe> -->
+          ></iframe>
         } @else if (shown(cover()); as src) {
           <img [src]="src" [alt]="page().data?.event?.title || ''" class="mt-8 aspect-[16/8] w-full rounded-xl border border-gold-500/30 object-cover" (error)="hide(src)" />
         }
